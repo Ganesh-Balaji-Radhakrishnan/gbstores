@@ -1,7 +1,8 @@
 import React from "react"
 import {Link} from "react-router-dom"
 
-import {auth} from "../../firebase/firebase.utils"
+import { auth } from '../../firebase/firebase.utils';
+
 
 // https://create-react-app.dev/docs/adding-images-fonts-and-files/
 import {ReactComponent as Logo} from "../../assets/crown.svg"
@@ -17,11 +18,16 @@ const Header = ({currentUser}) => (
             <Link className="option" to="/shop"> Shop </Link>
             <Link className="option" to="/shop"> Contact </Link>
             {/* <Link className="option" to="/signin">Signin</Link> */}
-            {
-                currentUser ? 
-                (<div className="option" onClick={()=> auth.signOut }>SIGN OUT</div>) :
-                (<Link className="option" to="/signin">signin</Link>)
-            }
+            {currentUser ? (
+                <div className='option' onClick={() => auth.signOut()}>
+                     SIGN OUT
+                     {console.log(currentUser)}
+                 </div>
+                ) : (
+                <Link className='option' to='/signin'>
+                      SIGN IN
+                </Link>
+            )}
         </div>
     </div>
 )
