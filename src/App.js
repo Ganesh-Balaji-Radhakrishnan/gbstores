@@ -52,7 +52,7 @@ class App extends Component {
   render(){
     return (
       <div>
-        <Header currentUser={this.state.currentUser}/> 
+        <Header/> 
         {/* //makes sure the header stays on top of all the pages */}
         <Switch>
           <Route exact path="/" component={HomePage} />
