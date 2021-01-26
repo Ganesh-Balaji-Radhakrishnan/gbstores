@@ -41,6 +41,7 @@ const Header = ({currentUser,hidden}) => (
     </div>
 )
 
+//connect to the redux store to retrive state
 const mapStatetoProps = ({user:{currentUser}, cart:{hidden}}) => ({
     currentUser,
     hidden
